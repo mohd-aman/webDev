@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: black;
+    color: white;
+}
+
+nav{
+    display: flex;
+    padding: 2rem;
+}
+
+header nav img{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+header nav div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+}
+
+header nav div a{
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header nav div a:hover{
+    color: #5DA9E9;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.hero {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10rem;
+}
+
+.hero img{
+    height: 30rem;
+    width: 30rem;
+    border-radius: 5rem;
+}
+
+.hero div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h4{
+    color: #5DA9E9;
+    font-size: larger;
+    line-height: 3rem;
+}
+.hero h1{
+    font-size:4rem;
+}
+.hero h1 span{
+    color: #5DA9E9;
+}
+
+.hero button{
+    background-color: black;
+    border: 3px solid #5DA9E9;
+    border-radius: 1rem;
+    height: 2rem;
+    width: 15rem;
+    color: white;
+    margin: 2rem;
+    transition: all 0.5s ease-in;
+}
+
+.hero button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #5DA9E9;
+}

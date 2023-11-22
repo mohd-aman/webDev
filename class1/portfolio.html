@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
         <nav>
-            <img src="assets/Scaler Logo.png" alt="scaler logo" width="50">
+            <img src="https://mohd-aman.github.io/portfolio/assets/scaler-academy%20logo%202.png" alt="scaler logo" width="50">
             <div>
                 <a href="#">Home</a>
                 <a href="#">About</a>
@@ -17,18 +18,81 @@
                 <a href="#">Blog</a>
             </div>
         </nav>
-        <div>
+        <div class="hero">
             <img src="assets/mrinal.jpg" alt="">
             <div>
                 <h4>Mrinal Bhattacharya</h4>
                 <h1>I'm a Frontend
                     <br>
-                    Developer
+                    <span>
+                        Developer
+                    </span>
                 </h1>
                 <p>Description</p>
                 <button>Download Resume</button>
             </div>
         </div>
     </header>
+    <section id="about-me" class="about">
+        <div class="container">
+            <div class="left">
+                <img src="./assets//mrinal_profile.jpg" width="400" alt="">
+            </div>
+            <div class="right">
+                <h1>About <span>Me</span></h1>
+                <h3>Hello! I am Onkar Tarar </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque adipisci distinctio obcaecati aliquid, quia tempora quis optio repudiandae officia earum? Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <div class="socials flex">
+                    <a href="https://in.linkedin.com/in/mohd-aman"> <img src="./assets/linkedIn.png" width="40" alt=""> </a>
+                    <a href="#"><img src="./assets/leet logo.png" width="40" alt=""></a>
+                    <a href="#"><img src="./assets/github logo.png" width="40" alt=""></a>
+                    <a href="#"><img src="./assets/twitter logo.png" height="40" width="40" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project" class="services">
+        <div class="container">
+            <h1 class="services-head">My Projects</h1>
+            <p>I mostly work with HTML ,CSS ,JavaScript , React and Node</p>
+            <div >
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="./assets/calculator png.png" width="40" alt="calculator image">
+                        <h2>Calculator</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, debitis?</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/cart png.png" width="40" alt="cart image">
+                        <h2>Cart</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, debitis?</p>
+                    </div>
+                    <div class="card">
+                        <h2>Todo List</h2>
+                        <img src="./assets/to do list.png" width="40" alt="todo Icon">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-form">
+        <h2>Get in Touch</h2>
+        <form class="contact-headng" id="contact">
+        <label>
+            <span>Name</span>
+            <input class="form_input" type="text" placeholder="Name">
+        </label>
+        <label >
+            <span>Email</span>
+            <input class="form_input" type="email" placeholder="Email">
+        </label>
+        <label>
+            <span>Message</span>
+            <textarea class="form_input" placeholder="Message"></textarea>
+        </label>
+        <input class="form_input submit_button" type="submit" value="Send">
+        </form>
+    </section>
 </body>
 </html>
