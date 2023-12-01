@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="all">Remove All</button>
+    <ul>
+      <li>
+        <p>Task - 1</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 2</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 3</p>
+        <button>delete</button>
+      </li>
+      <li>
+        <p>Task - 4</p>
+        <button>delete</button>
+      </li>
+    </ul>
+    <script>
+      // Q- Make remove all button work  and make individual delete btn work 
+      var removeAllBtn = document.querySelector("#all");
+      removeAllBtn.addEventListener('click',function(){
+        // console.log("removeallBtn clicked");
+        var ul = document.querySelector("ul")
+        ul.remove();
+      })
+      //implement for one btn
+      // var btn = document.querySelector("ul button")
+      // console.log(btn);
+      // btn.addEventListener('click',function(e){
+      //   console.log(e);
+      //   var parent = e.target.parentElement;
+      //   parent.remove();
+      // })
+
+      //implement for all btn
+      var allBtns = document.querySelectorAll('ul button');
+      for(var i=0;i<allBtns.length;i++){
+        allBtns[i].addEventListener("click",function(e){
+          var parent = e.target.parentElement;
+          parent.remove();
+        })
+      }
+    </script>
+  </body>
+</html>

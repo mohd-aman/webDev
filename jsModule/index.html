@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="the-two" class="two">I am heading</h1>
+    <div>
+        <p>I am child of div</p>
+        <p>I am another child of div</p>
+    </div>
+    <h2>I am heading 2</h2>
+    <h2 class="one">I am second  heading 2</h2>
+    <h2 id="the-one">I am third  heading 2</h2>
+    
+</body>
+<script>
+    //read
+    // var h1Element = document.querySelector("h1");
+    // var h1ElementText = h1Element.innerText;
+    // console.log(h1Element);
+    // console.log(h1ElementText);
+    // var h2Element = document.querySelector("h2");
+    // console.log(h2Element);
+    // var allH2Element = document.querySelectorAll("h2");
+    // console.log(allH2Element);
+
+    //write
+    // var h3Element = document.createElement("h3");
+    // h3Element.innerText = "I am h3";
+    // console.log(h3Element);
+    // var body = document.querySelector("body");
+    // body.appendChild(h3Element);
+
+    //update
+    var h1 = document.querySelector('h1');
+    h1.innerText = "Hello world";
+
+    //delete
+    var h2 = document.querySelector("h2");
+    h2.remove();
+</script>
+<!-- <script src="./script.js">
+
+</script> -->
+</html>
