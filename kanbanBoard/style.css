@@ -59,3 +59,40 @@
 .remove-btn{
     font-size: 1.5rem;
 }
+
+.modal-cont{
+    height: 50vh;
+    width: 50vw;
+    background-color: burlywood;
+    display: flex;
+    position: fixed;
+    left: 25vw;
+    top:25vh;
+    border: 1px solid black;
+}
+
+.textarea-cont{
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 2rem;
+    padding: 2rem;
+    border-right: 2px solid black;
+}
+
+.priority-color-cont{
+    height: 100%;
+    width: 25%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.priority-color{
+    height: 3rem;
+    width: 5rem;
+}
