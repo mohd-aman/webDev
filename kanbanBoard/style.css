@@ -50,7 +50,7 @@
 }
 
 .pink{
-    background-color: pink;
+    background-color: violet;
 }
 
 .add-btn{
@@ -64,7 +64,7 @@
     height: 50vh;
     width: 50vw;
     background-color: burlywood;
-    display: flex;
+    display: none;
     position: fixed;
     left: 25vw;
     top:25vh;
@@ -95,4 +95,34 @@
 .priority-color{
     height: 3rem;
     width: 5rem;
+}
+
+.main-cont{
+    margin:2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.ticket-cont{
+    height: 10rem;
+    width: 15rem;
+    background-color:cornsilk;
+}
+
+.ticket-color{
+    height: 1rem;
+}
+
+.ticket-id{
+    height: 1.5rem;
+    font-weight: bold;
+    background-color: grey;
+}
+
+.ticket-area{
+    height: calc(10rem - 1.5rem - 1rem);
+    padding: 5px;
+    font-size: 1.25rem;
 }
