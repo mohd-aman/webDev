@@ -2,6 +2,7 @@ let addBtn = document.querySelector('.add-btn');
 let modal = document.querySelector('.modal-cont');
 let textArea = document.querySelector('.textarea-cont');
 let mainCont = document.querySelector('.main-cont');
+let allPriorityColor = document.querySelectorAll('.priority-color');
 let addModal = true;
 
 addBtn.addEventListener('click',function(){
@@ -26,6 +27,16 @@ textArea.addEventListener('keydown',function(e){
         addModal = true
     }
 })
+
+for(let i=0;i<allPriorityColor.length;i++){
+    allPriorityColor[i].addEventListener("click",function(){
+        console.log(allPriorityColor[i])
+        for(let j=0;j<allPriorityColor.length;j++){
+            allPriorityColor[j].classList.remove('active');
+        }
+        allPriorityColor[i].classList.add('active')
+    })
+}
 
 function generateTicket(task){
     // <div class="ticket-cont">
