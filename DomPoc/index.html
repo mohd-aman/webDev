@@ -25,6 +25,28 @@
 <script>
 //questions -> on click of any div add a border of 2px solid of yellow color. 
 
+    //1. to add an event listener we need first on which element we are going to add event listener
+    //          and second is what is the event.
+    //2. add active class to that div.
+
+    //did the solution for one div
+    // let div = document.querySelector("div");
+    // div.addEventListener('click',function(){
+    //     div.classList.add('active')
+    // })
+
+    //applying to all the div
+    //1. select all the div
+    let allDiv = document.querySelectorAll("div");
+    //2. loop through all the div
+    for(let i=0;i<allDiv.length;i++){
+        //3. apply event listener to each div
+        allDiv[i].addEventListener("click",function(){
+            //4. add active class when user clicks
+            allDiv[i].classList.add('active');
+        })
+    }
+
 </script>
 </body>
 
