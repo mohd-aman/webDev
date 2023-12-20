@@ -6,6 +6,9 @@ let allPriorityColor = document.querySelectorAll('.priority-color');
 let addModal = true;
 let taskColor = 'red';
 
+// Instantiate
+var uid = new ShortUniqueId();
+
 addBtn.addEventListener('click',function(){
     console.log("Btn has been clicked")
     if(addModal){
@@ -34,6 +37,7 @@ textArea.addEventListener('keydown',function(e){
     }
 })
 
+//selecting the priority of a task.
 for(let i=0;i<allPriorityColor.length;i++){
     allPriorityColor[i].addEventListener("click",function(){
         // console.log(allPriorityColor[i])
@@ -53,10 +57,11 @@ function generateTicket(task){
         // <div class="ticket-id">#eidut3</div>
         // <div class="ticket-area">Some Task</div>
     // </div>
+    let id = uid.rnd();
     let ticketCont = document.createElement("div");
     ticketCont.className = "ticket-cont";
     ticketCont.innerHTML = `<div class="ticket-color ${taskColor}"></div>
-                            <div class="ticket-id">#eidut3</div>
+                            <div class="ticket-id">#${id}</div>
                             <div class="ticket-area">${task}</div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
