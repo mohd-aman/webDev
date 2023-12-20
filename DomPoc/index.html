@@ -43,6 +43,11 @@
         //3. apply event listener to each div
         allDiv[i].addEventListener("click",function(){
             //4. add active class when user clicks
+            //5. before adding class active remove from all the div the active class. 
+            for(let j=0;j<allDiv.length;j++){
+                allDiv[j].classList.remove('active');
+            }
+            //before adding border we removed from all the div. 
             allDiv[i].classList.add('active');
         })
     }
