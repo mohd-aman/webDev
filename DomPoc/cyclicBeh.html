@@ -24,7 +24,18 @@
         //Q. on click of div show the next number in the array. and if you are at the end of
         //      array show first element.
         let arr = [0,1,2,3,4,5,6,7,8]
-
+        let index = 0;
+        //select div 
+        let div = document.querySelector('div');
+        div.addEventListener('click',function(){
+            // if(index == arr.length-1){
+            //     index = 0;
+            // }else{
+            //     index++;
+            // }
+            index = (index+1)%arr.length;
+            div.innerText = arr[index];
+        })
         //1. show next number on array on click of div. 
 
     </script>
