@@ -31,6 +31,20 @@
         //1. add event listener to emoji
         //2. remove the current class, which is responsible for showing emoji
         //3. add another emoji class. 
+        //4. check if happy emoji is there. if yes remove it and add sad class
+        //5. else remove sad emoji class and add happy emoji class
+        let emoji = document.querySelector('i');
+        emoji.addEventListener('click',function(){
+            // console.log("step 1 complete")
+            // console.log(emoji.classList);
+            if(emoji.classList.contains('fa-face-laugh-wink')){
+                emoji.classList.remove('fa-face-laugh-wink');
+            emoji.classList.add('fa-face-sad-tear');
+            }else{
+                emoji.classList.remove('fa-face-sad-tear');
+                emoji.classList.add('fa-face-laugh-wink');
+            }
+        })
     </script>
 </body>
 </html>
