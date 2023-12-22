@@ -68,14 +68,17 @@ function generateTicket(task){
     mainCont.appendChild(ticketCont);
 
     //handle lock and unlock
+    let taskArea = ticketCont.querySelector('.ticket-area');
     let lockUnlockBtn = ticketCont.querySelector('.lock-unlock i');
     lockUnlockBtn.addEventListener('click',function(){
         if(lockUnlockBtn.classList.contains('fa-lock')){
             lockUnlockBtn.classList.remove('fa-lock');
             lockUnlockBtn.classList.add('fa-lock-open')
+            taskArea.setAttribute('contentEditable','true')
         }else{
             lockUnlockBtn.classList.remove('fa-lock-open');
             lockUnlockBtn.classList.add('fa-lock')
+            taskArea.setAttribute('contentEditable','false')
         }
     })
 }
