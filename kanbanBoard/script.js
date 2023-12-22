@@ -66,4 +66,21 @@ function generateTicket(task){
                             <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
+
+    //handle lock and unlock
+    let lockUnlockBtn = ticketCont.querySelector('.lock-unlock i');
+    lockUnlockBtn.addEventListener('click',function(){
+        if(lockUnlockBtn.classList.contains('fa-lock')){
+            lockUnlockBtn.classList.remove('fa-lock');
+            lockUnlockBtn.classList.add('fa-lock-open')
+        }else{
+            lockUnlockBtn.classList.remove('fa-lock-open');
+            lockUnlockBtn.classList.add('fa-lock')
+        }
+    })
 }
+
+
+//selecting the lock-unlock button 
+// let lockUnlockBtn = document.querySelector(".lock-unlock");
+// console.log(lockUnlockBtn);
