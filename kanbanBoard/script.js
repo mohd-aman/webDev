@@ -1,10 +1,23 @@
 let addBtn = document.querySelector('.add-btn');
+let removeBtn = document.querySelector('.remove-btn');
 let modal = document.querySelector('.modal-cont');
 let textArea = document.querySelector('.textarea-cont');
 let mainCont = document.querySelector('.main-cont');
 let allPriorityColor = document.querySelectorAll('.priority-color');
 let addModal = true;
 let taskColor = 'red';
+let removeBtnActive = false;
+
+//Toggle delete icon color
+removeBtn.addEventListener('click',function(){
+    if(removeBtnActive){
+        removeBtn.style.color = 'black';
+        removeBtnActive = false;
+    }else{
+        removeBtn.style.color = 'red';
+        removeBtnActive = true;
+    }  
+})
 
 // Instantiate
 var uid = new ShortUniqueId();
@@ -80,6 +93,12 @@ function generateTicket(task){
             lockUnlockBtn.classList.add('fa-lock')
             taskArea.setAttribute('contentEditable','false')
         }
+    })
+
+    //handle delte of ticket
+    ticketCont.addEventListener('click',function(){
+        if(removeBtnActive)
+            ticketCont.remove();
     })
 }
 

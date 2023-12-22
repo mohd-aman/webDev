@@ -24,13 +24,14 @@
     </style>
 </head>
 <!-- 
-    Q1. Add a toggle functionality on button on click of it, it's text should change to "Delet Active" 
+    Q1. Add a toggle functionality on button on click of it,
+        it's text should change to "Delet Active" 
         and on again clicking text should change back to "Delete Deactive".
     Q2. On click of tasks delete it. 
     Q3. Only delete task on click when button text says Active -->
 <body>
     <button>Delete Deactive</button>
-    <!-- <div class="tasks-container">
+    <div class="tasks-container">
         <div class="task"></div>
         <div class="task"></div>
         <div class="task"></div>
@@ -41,6 +42,27 @@
         <div class="task"></div>
         <div class="task"></div>
         <div class="task"></div>
-    </div> -->
+    </div>
+    <script>
+        let btn = document.querySelector('button');
+        let isActive = false;
+        btn.addEventListener('click',function(){
+            if(isActive){
+                btn.innerText = "Delete Deactive";
+                isActive = false;
+            }else{
+                btn.innerText = "Delete Active"
+                isActive = true;
+            }
+        })
+
+        let tasks = document.querySelectorAll('.task');
+        for(let i=0;i<tasks.length;i++){
+            tasks[i].addEventListener('click',function(){
+                if(isActive)
+                    tasks[i].remove();
+            })
+        }
+    </script>
 </body>
 </html>
