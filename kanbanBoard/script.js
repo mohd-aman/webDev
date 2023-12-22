@@ -62,7 +62,8 @@ function generateTicket(task){
     ticketCont.className = "ticket-cont";
     ticketCont.innerHTML = `<div class="ticket-color ${taskColor}"></div>
                             <div class="ticket-id">#${id}</div>
-                            <div class="ticket-area">${task}</div>`
+                            <div class="ticket-area">${task}</div>
+                            <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
 }
