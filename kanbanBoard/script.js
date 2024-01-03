@@ -7,6 +7,7 @@ let allPriorityColor = document.querySelectorAll('.priority-color');
 let addModal = true;
 let taskColor = 'red';
 let removeBtnActive = false;
+let colorArr = ['red','blue','green','pink'];
 
 //Toggle delete icon color
 removeBtn.addEventListener('click',function(){
@@ -79,6 +80,27 @@ function generateTicket(task){
                             <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
+
+    //handle priority color
+    let ticketColor = ticketCont.querySelector('.ticket-color');
+    ticketColor.addEventListener('click',function(){
+        // console.log("priority Color is clicked")
+        // console.log(ticketColor);
+        let currentColor = ticketColor.classList[1];
+        console.log(currentColor);
+        ticketColor.classList.remove(currentColor);
+        let currentColorIndex;
+        for(let i=0;i<colorArr.length;i++){
+            if(colorArr[i] == currentColor){
+                currentColorIndex = i;
+                break;
+            }
+        }
+        let nextColorIndex = (currentColorIndex+1)%colorArr.length;
+        let nextColor = colorArr[nextColorIndex];
+        console.log(nextColor);
+        ticketColor.classList.add(nextColor)
+    })
 
     //handle lock and unlock
     let taskArea = ticketCont.querySelector('.ticket-area');
