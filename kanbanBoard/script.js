@@ -9,6 +9,35 @@ let taskColor = 'red';
 let removeBtnActive = false;
 let colorArr = ['red','blue','green','pink'];
 
+let allFilterColor = document.querySelectorAll('.color');
+for(let i=0;i<allFilterColor.length;i++){
+    allFilterColor[i].addEventListener('click',function(){
+        // console.log(allFilterColor[i]);
+        let currentSelectedFilter = allFilterColor[i].classList[1];
+        console.log(currentSelectedFilter);
+        let allTicketsColor = document.querySelectorAll('.ticket-color');
+        // console.log(allTicketsColor);
+        for(let j=0;j<allTicketsColor.length;j++){
+            let colorOfTicket = allTicketsColor[j].classList[1];
+            console.log(colorOfTicket);
+            if(colorOfTicket == currentSelectedFilter){
+                //show it
+                allTicketsColor[j].parentElement.style.display = 'block';
+            }else{
+                //hide it
+                allTicketsColor[j].parentElement.style.display = 'none';
+            }
+        }
+    })
+
+    allFilterColor[i].addEventListener('dblclick',function(){
+        let allTicketsColor = document.querySelectorAll('.ticket-color');
+        for(let j=0;j<allTicketsColor.length;j++){
+            allTicketsColor[j].parentElement.style.display = 'block';
+        }
+    })
+}
+
 //Toggle delete icon color
 removeBtn.addEventListener('click',function(){
     if(removeBtnActive){
@@ -87,7 +116,7 @@ function generateTicket(task){
         // console.log("priority Color is clicked")
         // console.log(ticketColor);
         let currentColor = ticketColor.classList[1];
-        console.log(currentColor);
+        // console.log(currentColor);
         ticketColor.classList.remove(currentColor);
         let currentColorIndex;
         for(let i=0;i<colorArr.length;i++){
@@ -98,7 +127,7 @@ function generateTicket(task){
         }
         let nextColorIndex = (currentColorIndex+1)%colorArr.length;
         let nextColor = colorArr[nextColorIndex];
-        console.log(nextColor);
+        // console.log(nextColor);
         ticketColor.classList.add(nextColor)
     })
 
