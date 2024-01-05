@@ -8,6 +8,7 @@ let addModal = true;
 let taskColor = 'red';
 let removeBtnActive = false;
 let colorArr = ['red','blue','green','pink'];
+let ticketArr = [];
 
 let allFilterColor = document.querySelectorAll('.color');
 for(let i=0;i<allFilterColor.length;i++){
@@ -109,6 +110,10 @@ function generateTicket(task){
                             <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
+    ticketArr.push({id:id,task:task,color:taskColor});
+    let stringifiedArr = JSON.stringify(ticketArr);
+    localStorage.setItem('tasks',stringifiedArr);
+    console.log(ticketArr);
 
     //handle priority color
     let ticketColor = ticketCont.querySelector('.ticket-color');

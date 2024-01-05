@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,5];
+        let stringifyArr = JSON.stringify(arr);
+        localStorage.setItem("Array",stringifyArr);
+
+        let stringifyArrFromLocalStorage = localStorage.getItem('Array');
+        let arrFromLocalStorage = JSON.parse(stringifyArrFromLocalStorage);
+        arrFromLocalStorage.push(5398);
+        console.log(arrFromLocalStorage);
+    </script>
+</body>
+</html>
