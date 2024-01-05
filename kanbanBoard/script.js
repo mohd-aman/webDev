@@ -154,6 +154,16 @@ function generateTicket(task,priority,ticketId){
         let nextColor = colorArr[nextColorIndex];
         // console.log(nextColor);
         ticketColor.classList.add(nextColor)
+        let idx;
+        for(let i=0;i<ticketArr.length;i++){
+            if(id == ticketArr[i].id){
+                idx = i;
+            }
+        }
+        console.log(idx);
+        ticketArr[idx].color = nextColor;
+        console.log(ticketArr);
+        updateLocalStorage();
     })
 
     //handle lock and unlock
@@ -169,15 +179,38 @@ function generateTicket(task,priority,ticketId){
             lockUnlockBtn.classList.add('fa-lock')
             taskArea.setAttribute('contentEditable','false')
         }
+        let updatedTask = taskArea.innerText;
+        let idx;
+        for(let i=0;i<ticketArr.length;i++){
+            if(id == ticketArr[i].id){
+                idx = i;
+            }
+        }
+        ticketArr[idx].task = updatedTask;
+        updateLocalStorage();
     })
 
     //handle delte of ticket
     ticketCont.addEventListener('click',function(){
-        if(removeBtnActive)
+        if(removeBtnActive){
             ticketCont.remove();
+            let idx;
+            for(let i=0;i<ticketArr.length;i++){
+                if(id == ticketArr[i].id){
+                    idx = i;
+                }
+            }
+            ticketArr.splice(idx,1);
+            console.log(ticketArr);
+            updateLocalStorage();
+        }
     })
 }
 
+function updateLocalStorage(){
+    let stringifiedArr = JSON.stringify(ticketArr);
+    localStorage.setItem('tasks',stringifiedArr);
+}
 
 //selecting the lock-unlock button 
 // let lockUnlockBtn = document.querySelector(".lock-unlock");
