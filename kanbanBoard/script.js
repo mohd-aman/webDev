@@ -10,6 +10,17 @@ let removeBtnActive = false;
 let colorArr = ['red','blue','green','pink'];
 let ticketArr = [];
 
+if(localStorage.getItem('tasks')){
+    //create ticket from localStorage to UI
+    let stringifiedArr = localStorage.getItem('tasks');
+    // console.log(stringifiedArr);
+    ticketArr = JSON.parse(stringifiedArr);
+    console.log(ticketArr);
+    for(let i=0;i<ticketArr.length;i++){
+        generateTicket(ticketArr[i].task,ticketArr[i].color,ticketArr[i].id);
+    }
+}
+
 let allFilterColor = document.querySelectorAll('.color');
 for(let i=0;i<allFilterColor.length;i++){
     allFilterColor[i].addEventListener('click',function(){
@@ -74,7 +85,7 @@ textArea.addEventListener('keydown',function(e){
             alert("Please Enter some task!");
             return;
         }
-        generateTicket(textArea.value);
+        generateTicket(textArea.value,taskColor); // generating ticket from UI 
         textArea.value = "";
         modal.style.display = 'none'
         addModal = true
@@ -95,25 +106,34 @@ for(let i=0;i<allPriorityColor.length;i++){
     })
 }
 
-function generateTicket(task){
+function generateTicket(task,priority,ticketId){
     // <div class="ticket-cont">
         // <div class="ticket-color green"></div>
         // <div class="ticket-id">#eidut3</div>
         // <div class="ticket-area">Some Task</div>
     // </div>
-    let id = uid.rnd();
+    let id;
+    if(ticketId){ // it means called from localStorage data and id is available don't generate
+        id = ticketId // use the passed one.
+    }else{ // called from UI, need to generate random id
+        id = uid.rnd(); // generate new one.
+    }
+     
     let ticketCont = document.createElement("div");
     ticketCont.className = "ticket-cont";
-    ticketCont.innerHTML = `<div class="ticket-color ${taskColor}"></div>
+    ticketCont.innerHTML = `<div class="ticket-color ${priority}"></div>
                             <div class="ticket-id">#${id}</div>
                             <div class="ticket-area">${task}</div>
                             <div class="lock-unlock"><i class="fa-solid fa-lock"></i></div>`
     console.log(ticketCont)
     mainCont.appendChild(ticketCont);
-    ticketArr.push({id:id,task:task,color:taskColor});
-    let stringifiedArr = JSON.stringify(ticketArr);
-    localStorage.setItem('tasks',stringifiedArr);
-    console.log(ticketArr);
+    if(!ticketId){
+        ticketArr.push({id:id,task:task,color:taskColor});
+        let stringifiedArr = JSON.stringify(ticketArr);
+        localStorage.setItem('tasks',stringifiedArr);
+        console.log(ticketArr);
+    }
+    
 
     //handle priority color
     let ticketColor = ticketCont.querySelector('.ticket-color');
