@@ -1,3 +1,11 @@
+:root {
+    --red: #f95738;
+    --blue: #0d3b66;
+    --orange:#ee964b;
+    --beige: #faf0ca;
+    --yellow:#f4d35e;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +23,7 @@
 .toolbox-priority-cont{
     height: 3rem;
     width: 18rem;
-    background-color: aliceblue;
+    background-color: var(--beige);
     margin-left: 5rem;
     display: flex;
     align-items: center;
@@ -25,7 +33,7 @@
 .action-btn-cont {
     height: 3rem;
     width: 8rem;
-    background-color: aliceblue;
+    background-color: var(--beige);
     margin-left: 5rem;
     display: flex;
     align-items: center;
@@ -38,19 +46,19 @@
 }
 
 .red{
-    background-color: red;
+    background-color: #f95738;
 }
 
 .blue{
-    background-color: blue;
+    background-color: #0d3b66;
 }
 
 .green{
-    background-color: green;
+    background-color: #ee964b;
 }
 
 .pink{
-    background-color: violet;
+    background-color: #f4d35e;
 }
 
 .add-btn{
@@ -63,7 +71,7 @@
 .modal-cont{
     height: 50vh;
     width: 50vw;
-    background-color: burlywood;
+    background-color: var(--beige);
     display: none;
     position: fixed;
     left: 25vw;
@@ -119,7 +127,6 @@
 .ticket-id{
     height: 1.5rem;
     font-weight: bold;
-    background-color: grey;
 }
 
 .ticket-area{
@@ -129,7 +136,7 @@
 }
 
 .active{
-    border: 5px solid yellow;
+    border: 5px solid #f2af29;
 }
 
 .lock-unlock{

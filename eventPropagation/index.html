@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+         body{
+            height: 95vh;
+            display: flex;
+        }
+        .grandParent{
+            margin: auto;
+            height: 600px;
+            width: 600px;
+            background-color: slategrey;
+            display: flex;
+            border: 2px solid black;
+        }
+        .parent{
+            margin: auto;
+            height: 400px;
+            width: 400px;
+            background-color:thistle;
+            border: 2px solid black;
+            display: flex;
+        }
+        .child{
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            background-color: bisque;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandParent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+    
+
+    <script>
+        let parent = document.querySelector('.parent');
+        let child = document.querySelector('.child');
+        let grandParent = document.querySelector('.grandParent');
+        
+        grandParent.addEventListener('click',function(){
+            console.log("Grandparent has been clicked")
+        } )
+
+        parent.addEventListener('click',function(e){
+            console.log("Parent has been clicked");
+            e.stopPropagation();
+        },true)
+
+        child.addEventListener('click',function(e){
+            console.log("Child has been clicked");
+            // e.stopPropagation();
+        })
+
+        // grandParent.addEventListener('click',function(){
+        //     console.log("Grandparent has been clicked Extra")
+        // })
+
+        // parent.addEventListener('click',function(e){
+        //     console.log("Parent has been clicked Extra");
+        // })
+
+        // child.addEventListener('click',function(e){
+        //     console.log("Child has been clicked Extra");
+        // })
+
+    </script>
+</body>
+</html>
